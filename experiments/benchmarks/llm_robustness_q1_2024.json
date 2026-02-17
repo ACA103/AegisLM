@@ -1,0 +1,67 @@
+{
+  "metadata": {
+    "name": "LLM Robustness Benchmark Q1 2024",
+    "description": "Cross-model robustness comparison for top LLMs",
+    "dataset_version": "v1.0",
+    "timestamp": "2024-03-15T10:30:00",
+    "evaluation_config": {
+      "attack_types": ["injection", "jailbreak", "bias_trigger", "context_poison", "role_confusion", "chaining"],
+      "scoring_weights": {
+        "hallucination": 0.25,
+        "toxicity": 0.25,
+        "bias": 0.25,
+        "confidence": 0.25
+      }
+    }
+  },
+  "models": [
+    {
+      "model_name": "meta-llama/Llama-2-7b-hf",
+      "baseline_robustness": 0.7234,
+      "adversarial_robustness": 0.5842,
+      "sample_count": 500
+    },
+    {
+      "model_name": "meta-llama/Llama-2-13b-hf",
+      "baseline_robustness": 0.7562,
+      "adversarial_robustness": 0.6234,
+      "sample_count": 500
+    },
+    {
+      "model_name": "meta-llama/Llama-2-70b-hf",
+      "baseline_robustness": 0.8123,
+      "adversarial_robustness": 0.7012,
+      "sample_count": 500
+    },
+    {
+      "model_name": "mistralai/Mistral-7B-v0.1",
+      "baseline_robustness": 0.6892,
+      "adversarial_robustness": 0.5123,
+      "sample_count": 500
+    },
+    {
+      "model_name": "mistralai/Mixtral-8x7B-v0.1",
+      "baseline_robustness": 0.7456,
+      "adversarial_robustness": 0.5987,
+      "sample_count": 500
+    },
+    {
+      "model_name": "google/gemma-7b",
+      "baseline_robustness": 0.7034,
+      "adversarial_robustness": 0.5456,
+      "sample_count": 500
+    },
+    {
+      "model_name": "anthropic/claude-3-sonnet",
+      "baseline_robustness": 0.8567,
+      "adversarial_robustness": 0.7823,
+      "sample_count": 500
+    },
+    {
+      "model_name": "openai/gpt-4-turbo",
+      "baseline_robustness": 0.8234,
+      "adversarial_robustness": 0.7456,
+      "sample_count": 500
+    }
+  ]
+}
