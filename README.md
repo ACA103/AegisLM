@@ -1,7 +1,7 @@
 # 🛡️ AegisLM — Multi-Agent Adversarial LLM Evaluation Framework
 
 <p align="center">
-  <img src="C:\Users\ayush\OneDrive\Documents\AegisLM.png" alt="AegisLM Logo" width="200"/>
+  <img src="https://github.com/ACA103/AegisLM_v1/blob/main/AegisLM.png" alt="AegisLM Logo" width="200"/>
 </p>
 
 ---
@@ -400,3 +400,4 @@ See [docs/roadmap.md](docs/roadmap.md) for the full development timeline.
 <p align="center">
   <strong>AegisLM</strong> — Production-Grade Adversarial LLM Evaluation
 </p>
+
