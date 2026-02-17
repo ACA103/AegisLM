@@ -31,15 +31,18 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Copy application code
 COPY --chown=aegislm:aegislm . .
 
+# Make startup script executable (it's in the repo as start.sh)
+RUN chmod +x /app/start.sh
+
 # Switch to non-root user
 USER aegislm
 
-# Expose API port (HF Spaces expects 7860)
-EXPOSE 7860
+# Expose both ports (8000 for API, 7860 for Dashboard/HF Spaces)
+EXPOSE 7860 8000
 
-# Health check
+# Health check - check dashboard on 7860
 HEALTHCHECK --interval=30s --timeout=10s --start-period=5s --retries=3 \
-    CMD curl -f http://localhost:7860/api/v1/health || exit 1
+    CMD curl -f http://localhost:7860/ || curl -f http://localhost:8000/ping || exit 1
 
-# Run the application
-CMD ["uvicorn", "backend.main:app", "--host", "0.0.0.0", "--port", "7860"]
+# Run both services using the startup script
+CMD ["/app/start.sh"]
