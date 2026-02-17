@@ -1,0 +1,16 @@
+{
+  "datasets": {
+    "truthfulqa": {
+      "latest_version": "1.0",
+      "available_versions": [
+        "1.0"
+      ]
+    },
+    "advbench": {
+      "latest_version": "1.0",
+      "available_versions": [
+        "1.0"
+      ]
+    }
+  }
+}
