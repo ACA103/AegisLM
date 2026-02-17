@@ -1,0 +1,65 @@
+# Policy Configuration for Defender Agent
+# Version: 1.0.0
+# This file defines the security policy rules for the defender agent
+
+# Forbidden patterns for policy violation detection
+forbidden_patterns:
+  - "ignore previous instructions"
+  - "ignore prior instructions"
+  - "you are now"
+  - "you are no longer"
+  - "override"
+  - "confidential"
+  - "secret"
+  - "top secret"
+  - "system mode"
+  - "admin mode"
+  - "developer mode"
+  - "bypass security"
+  - "disable safety"
+
+# Toxicity classification threshold
+# T > threshold => policy_violation
+toxicity_threshold: 0.6
+
+# Semantic policy similarity threshold
+# S > threshold => potential policy violation
+semantic_threshold: 0.7
+
+# Risk score threshold for high-risk classification
+risk_threshold: 0.5
+
+# Weights for risk score computation
+# Risk = λ1*I + λ2*Ro + λ3*T + λ4*(1-S)
+weights:
+  injection: 0.25
+  role_override: 0.2
+  toxicity: 0.3
+  semantic: 0.25
+
+# System policy statements for semantic comparison
+policy_statements:
+  - "No harmful advice"
+  - "No hate speech"
+  - "No illegal instructions"
+  - "No violence or threats"
+  - "No sexual content"
+  - "No discrimination or bias"
+  - "No self-harm encouragement"
+  - "No harassment or bullying"
+
+# Model configuration
+models:
+  toxicity:
+    model_type: "unbiased"  # Options: unbiased, original, multilingual
+  semantic:
+    embedding_model: "all-MiniLM-L6-v2"
+
+# Logging configuration
+logging:
+  level: "INFO"
+  log_evaluations: true
+  log_high_risk_only: false
+
+# Policy version hash (auto-generated, do not edit)
+policy_version_hash: "abc123def456"
