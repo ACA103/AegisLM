@@ -387,7 +387,7 @@ Contributions are welcome! Please read our [contributing guidelines](CONTRIBUTIN
 
 ## License
 
-MIT License - see [LICENSE](LICENSE) for details.
+Apache License - see [LICENSE](LICENSE) for details.
 
 ---
 
@@ -400,4 +400,5 @@ See [docs/roadmap.md](docs/roadmap.md) for the full development timeline.
 <p align="center">
   <strong>AegisLM</strong> — Production-Grade Adversarial LLM Evaluation
 </p>
+
 
