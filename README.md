@@ -1,8 +1,5 @@
 # 🛡️ AegisLM — Multi-Agent Adversarial LLM Evaluation Framework
 
-<p align="center">
-  <img src="https://github.com/ACA103/AegisLM_v1/blob/main/AegisLM.png" alt="AegisLM Logo" width="200"/>
-</p>
 
 ---
 
